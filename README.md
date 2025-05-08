@@ -3,7 +3,7 @@
 ¡Bienvenido a mi proyecto de detección de tumores cerebrales! Esta aplicación usa inteligencia artificial para analizar imágenes MRI y detectar posibles tumores, mostrando una máscara de segmentación y una superposición visual. Está construida con React (frontend), FastAPI (backend), Nginx (proxy inverso), y Docker para un despliegue súper sencillo. Además, usa ngrok para exponer la app públicamente sin costo.🚀
 
 <a target="_blank" align="center">
-  <img align="center" height="400" width="1000" alt="GIF" src="https://github.com/IVANMORAG/MRITumorDetectorAI/tree/main/recursos/MRI-Detector.gif">
+  <img align="center" height="400" width="1000" alt="GIF" src="https://github.com/IVANMORAG/MRITumorDetectorAI/blob/main/recursos/MRI-Detector.gif">
 </a>
 
 <br>
