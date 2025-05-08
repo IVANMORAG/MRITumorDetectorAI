@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.env/
+venv/
+env/
+tumor-detection/
+.pytest_cache/
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Archivos de entorno
+.env
+.env.*
+!.env.example  # Mantiene un ejemplo
+
+# Directorios con modelos/binary files
+backend/weights/
+!backend/weights/.gitkeep  # Opcional
+
+# IDE
+.idea/
+.vscode/
+*.swp

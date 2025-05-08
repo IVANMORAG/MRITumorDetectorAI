@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    volumes:
+      - frontend-node-modules:/app/node_modules
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    expose:
+      - "8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/weights:/app/weights
+    networks:
+      - app-network
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    env_file:
+      - .env
+    command: ["http", "--url=poorly-free-insect.ngrok-free.app", "frontend:80"]
+    depends_on:
+      - frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  frontend-node-modules:
